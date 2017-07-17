@@ -1,0 +1,5 @@
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookLogic\bin\Debug\BookLogic.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookLogic\bin\Debug\BookLogic.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookLogic\obj\Debug\BookLogic.csprojResolveAssemblyReference.cache
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookLogic\obj\Debug\BookLogic.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookLogic\obj\Debug\BookLogic.pdb
