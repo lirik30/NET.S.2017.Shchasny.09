@@ -1,0 +1,9 @@
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\obj\Debug\BookListServiceLogic.csprojResolveAssemblyReference.cache
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\bin\Debug\BookListServiceLogic.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\bin\Debug\BookListServiceLogic.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\bin\Debug\BookListStorageLogic.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\bin\Debug\BookLogic.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\bin\Debug\BookListStorageLogic.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\bin\Debug\BookLogic.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\obj\Debug\BookListServiceLogic.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\obj\Debug\BookListServiceLogic.pdb

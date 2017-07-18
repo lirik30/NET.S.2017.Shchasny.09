@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BookLogic
 {
@@ -34,7 +35,6 @@ namespace BookLogic
 
         public bool Equals(Book other)
         {
-            Console.WriteLine("Equals(Book)");
             if (ReferenceEquals(other, null)) return false;
             if (ReferenceEquals(this, other)) return true;
 
@@ -56,7 +56,7 @@ namespace BookLogic
         /// <param name="other">Book to compare</param>
         /// <param name="comparer">Custom comparer</param>
         /// <returns></returns>
-        public int CompareTo(Book other, IComparer comparer) => ReferenceEquals(comparer, null) ? this.Id - other.Id : comparer.Compare(this, other);
+        public int CompareTo(Book other, IComparer<Book> comparer) => ReferenceEquals(comparer, null) ? this.Id - other.Id : comparer.Compare(this, other);
 
         public override string ToString()
         {
@@ -65,7 +65,6 @@ namespace BookLogic
 
         public override bool Equals(object obj)
         {
-            Console.WriteLine("Equals(object)");
             if (ReferenceEquals(this, obj)) return true;
 
             var book = obj as Book;

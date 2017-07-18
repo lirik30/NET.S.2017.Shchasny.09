@@ -49,6 +49,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BookListServiceLogic\BookListServiceLogic.csproj">
+      <Project>{7ddcf7eb-143d-4e0d-80c6-ba18484db88b}</Project>
+      <Name>BookListServiceLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BookListStorageLogic\BookListStorageLogic.csproj">
+      <Project>{05B12110-D496-4C2F-B11B-F72CDCB37BB8}</Project>
+      <Name>BookListStorageLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BookLogic\BookLogic.csproj">
       <Project>{a7256883-c5ed-4f3f-8ee5-31c8cb6b7f43}</Project>
       <Name>BookLogic</Name>
