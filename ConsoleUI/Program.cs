@@ -10,6 +10,8 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            //TODO: comparer classes, storageFactory class
+
             var csharp = new Book("Andrew Troelsen", "C#...", "IT");
             Console.WriteLine(csharp);
 
@@ -19,51 +21,36 @@ namespace ConsoleUI
             var csharp2 = new Book("Andrew Troelsen", "C#...", "IT");
             
             Console.WriteLine(csharp.CompareTo(csharp2, new AuthorComparer()));
+            
 
-            //Console.ReadKey();
 
-
-            BookListService service = new BookListService(new storageFac());
+            var service = new BookListService(new storageFactory());
             service.AddBook(csharp);
             service.AddBook(dotnet);
             service.AddBook(csharp2);
             Console.WriteLine("___________");
-            //Console.WriteLine(service.FindBookById(1));
-            //Console.WriteLine(service.FindBookByTag("Andrew Troelsen", SearchTag.ByAuthor));
-            service.Print();
-            //Console.WriteLine("___________");
-            //service.RemoveBook(dotnet);
-            //service.Print();
+            Console.WriteLine();
 
+            service.Save();
+            var hahaika = new Book("petrosyan", "shytki", "smeh");
+            service.AddBook(hahaika);
+            service.Print();
             Console.WriteLine("___________");
-            service.SortBookByTag(new AuthorComparer());
+            service.Load();
             service.Print();
 
             Console.ReadKey();
         }
     }
 
-    class storageFac : IStorageFactory
+    class storageFactory : IStorageFactory
     {
         public IStorage Create()
         {
-            return new storage();
+            return new BinaryStorage("library.bin");
         }
     }
-
-    class storage : IStorage
-    {
-        public void SaveBooks(List<Book> books)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void LoadBooks(List<Book> books)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
+    
     class AuthorComparer : IComparer<Book>
     {
         public int Compare(Book lhs, Book rhs)

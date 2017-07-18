@@ -12,7 +12,7 @@ namespace BookLogic
         public string Name { get; set; }
         public string Genre { get; set; }
 
-        public int Id//Нужен id или нет. заменить на year??
+        public int Id//bug
         {
             get => _id;
             set
@@ -22,8 +22,7 @@ namespace BookLogic
             }
         }
 
-
-        public Book(string author, string name, string genre)
+        public Book(string author = null, string name = null, string genre = null)
         {
             //TODO: обрабатывать null аргументы
             Author = author??"NoAuthor";
