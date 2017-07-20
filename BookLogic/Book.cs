@@ -29,7 +29,7 @@ namespace BookLogic
         public int Pages
         {
             get => _pages;
-            set => _pages = value <= 0 ? throw new ArgumentException() : value;
+            set => _pages = value <= 0 ? throw new ArgumentOutOfRangeException($"{value} is to low for the pages number") : value;
         }
 
         public bool Equals(Book other)

@@ -1,0 +1,8 @@
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\Logging\bin\Debug\Logging.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\Logging\bin\Debug\Logging.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\Logging\bin\Debug\NLog.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\Logging\bin\Debug\NLog.xml
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\Logging\obj\Debug\Logging.csprojResolveAssemblyReference.cache
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\Logging\obj\Debug\Logging.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\Logging\obj\Debug\Logging.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\Logging\bin\Debug\NLog.config

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BookListServiceLogic
 {
-    class StorageCreateException : Exception
+    public class StorageCreateException : Exception
     {
         public StorageCreateException()
         {

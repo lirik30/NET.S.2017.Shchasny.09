@@ -7,3 +7,8 @@ C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\Book
 C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\bin\Debug\BookLogic.pdb
 C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\obj\Debug\BookListServiceLogic.dll
 C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\obj\Debug\BookListServiceLogic.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\bin\Debug\Logging.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\bin\Debug\NLog.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\bin\Debug\Logging.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\bin\Debug\NLog.xml
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\bin\Debug\NLog.config

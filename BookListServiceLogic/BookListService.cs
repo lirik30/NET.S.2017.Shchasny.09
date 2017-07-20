@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Logging;
 using System.Text;
 using BookLogic;
 using BookListStorageLogic;
@@ -11,6 +12,8 @@ namespace BookListServiceLogic
     /// </summary>
     public class BookListService
     {
+        ILog logger = new NLogAdapter();
+
         /// <summary>
         /// Collection of books
         /// </summary>
@@ -29,9 +32,10 @@ namespace BookListServiceLogic
         public void Load()
         {
             if(ReferenceEquals(_storageFactory, null))
-                throw new StorageCreateException();
+                throw new StorageCreateException("If you want to save or load collection of books, you must to set storage creator");
             var storage = _storageFactory.Create();
             storage.LoadBooks(books);
+            logger.Info("Collection of books was loaded");
         }
 
         /// <summary>
@@ -40,9 +44,10 @@ namespace BookListServiceLogic
         public void Save()
         {
             if(ReferenceEquals(_storageFactory, null))
-                throw new StorageCreateException();
+                throw new StorageCreateException("You cannot load or save collection without storage. Please, set storage creator");
             var storage = _storageFactory.Create();
             storage.SaveBooks(books);
+            logger.Info("Collection of books was saved");
         }
 
         /// <summary>
@@ -52,12 +57,13 @@ namespace BookListServiceLogic
         public void AddBook(Book book)
         {
             if(ReferenceEquals(book, null))
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(book), "Book to add cannot be null");
 
             if(books.Contains(book)) 
-                throw new ArgumentException();
+                throw new ArgumentException("This book already exists in the collection", nameof(book));
 
             books.Add(book);
+            logger.Info($"{book} was successfully added in the collection");
         }
 
         /// <summary>
@@ -67,9 +73,10 @@ namespace BookListServiceLogic
         public void RemoveBook(Book book)
         {
             if(!books.Contains(book))
-                throw new ArgumentException();
+                throw new ArgumentException("Book not found", nameof(book));
 
             books.Remove(book);
+            logger.Info($"{book} was successfully removed from the collection");
         }
 
         /// <summary>
@@ -86,9 +93,10 @@ namespace BookListServiceLogic
         public void SortBookByTag(IComparer<Book> comparer)
         {
             if(ReferenceEquals(comparer, null))
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(comparer), "Comparer cannot be null");
 
             books.Sort(comparer);
+            logger.Info("Collection of the books was sorted");
         }
 
         /// <summary>

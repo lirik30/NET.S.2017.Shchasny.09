@@ -65,6 +65,10 @@
       <Project>{a7256883-c5ed-4f3f-8ee5-31c8cb6b7f43}</Project>
       <Name>BookLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{50475308-75ee-411d-b2e6-8f2887bade85}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

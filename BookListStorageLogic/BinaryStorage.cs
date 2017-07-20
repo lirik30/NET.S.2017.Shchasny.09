@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using BookLogic;
+using Logging;
 
 namespace BookListStorageLogic
 {
@@ -10,6 +11,9 @@ namespace BookListStorageLogic
     /// </summary>
     public class BinaryStorage : IStorage
     {
+
+        ILog logger = new NLogAdapter();
+
         /// <summary>
         /// File path
         /// </summary>
@@ -27,13 +31,13 @@ namespace BookListStorageLogic
         public void SaveBooks(List<Book> books)
         {
             if(ReferenceEquals(books, null)) 
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(books), "Collection to save cannot be null");
 
             Stream stream = File.Open(_path, FileMode.Create, FileAccess.Write);
 
             using (var binWriter = new BinaryWriter(stream))
             {
-                Console.WriteLine("Save start!");
+                logger.Debug("Save started");
                 foreach (var book in books)
                 {
                     binWriter.Write(book.Author);
@@ -41,6 +45,7 @@ namespace BookListStorageLogic
                     binWriter.Write(book.Genre);
                     binWriter.Write(book.Pages);
                 }
+                logger.Debug("Save finished");
             }
             
             
@@ -56,13 +61,13 @@ namespace BookListStorageLogic
             books.Clear();
 
             if(!File.Exists(_path))
-                throw new FileNotFoundException();
+                throw new FileNotFoundException($"File by path {_path} not found");
 
             Stream stream = File.Open(_path, FileMode.Open, FileAccess.Read);
 
             using (var binReader = new BinaryReader(stream))
             {
-                Console.WriteLine("Load start!");
+                logger.Debug("Load started");
                 while (binReader.BaseStream.Position < binReader.BaseStream.Length)
                 {
                     var book = new Book()
@@ -74,6 +79,7 @@ namespace BookListStorageLogic
                     };
                     books.Add(book);
                 }
+                logger.Debug("Load finished");
             }
         }
     }

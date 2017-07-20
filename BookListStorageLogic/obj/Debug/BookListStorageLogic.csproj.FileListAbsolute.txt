@@ -5,3 +5,8 @@ C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\Book
 C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListStorageLogic\obj\Debug\BookListStorageLogic.csprojResolveAssemblyReference.cache
 C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListStorageLogic\obj\Debug\BookListStorageLogic.dll
 C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListStorageLogic\obj\Debug\BookListStorageLogic.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListStorageLogic\bin\Debug\NLog.config
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListStorageLogic\bin\Debug\Logging.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListStorageLogic\bin\Debug\NLog.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListStorageLogic\bin\Debug\Logging.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListStorageLogic\bin\Debug\NLog.xml

@@ -10,3 +10,8 @@ C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\Cons
 C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\ConsoleUI\bin\Debug\BookListStorageLogic.dll
 C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\ConsoleUI\bin\Debug\BookListServiceLogic.pdb
 C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\ConsoleUI\bin\Debug\BookListStorageLogic.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\ConsoleUI\bin\Debug\Logging.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\ConsoleUI\bin\Debug\NLog.dll
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\ConsoleUI\bin\Debug\Logging.pdb
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\ConsoleUI\bin\Debug\NLog.xml
+C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\ConsoleUI\bin\Debug\NLog.config
