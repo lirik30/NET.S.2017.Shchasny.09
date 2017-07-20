@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using BookLogic;
 using BookListServiceLogic;
 using BookListStorageLogic;
+using ConsoleUI.Comparer;
 
 namespace ConsoleUI
 {
@@ -10,21 +10,22 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //TODO: comparer classes, storageFactory class
+            //TODO: storageFactory class?
 
-            var csharp = new Book("Andrew Troelsen", "C#...", "IT");
+            var csharp = new Book {Author = "Andrew Troelsen", Name = "C#...", Genre = "IT", Pages = 1312};
             Console.WriteLine(csharp);
 
-            var dotnet = new Book("John Skit", "C#...", "IT");
+            var dotnet = new Book { Author = "John Skit", Name = "C#...", Genre = "IT", Pages = 608};
             Console.WriteLine(dotnet);
 
-            var csharp2 = new Book("Andrew Troelsen", "C#...", "IT");
-            
-            Console.WriteLine(csharp.CompareTo(csharp2, new AuthorComparer()));
+            var csharp2 = new Book { Author = "Andrew Troelsen", Name = "C#...", Genre = "IT", Pages = 2012};
+            Console.WriteLine(csharp.CompareTo(csharp2, new PagesComparer()));
             
 
 
             var service = new BookListService(new storageFactory());
+            var service2 = new BookListService();
+            service2.Load();
             service.AddBook(csharp);
             service.AddBook(dotnet);
             service.AddBook(csharp2);
@@ -32,12 +33,15 @@ namespace ConsoleUI
             Console.WriteLine();
 
             service.Save();
-            var hahaika = new Book("petrosyan", "shytki", "smeh");
+            var hahaika = new Book { Author = "petrosyan", Name = "shytki", Genre = "smeh", Pages = 10};
             service.AddBook(hahaika);
-            service.Print();
+
+            Console.WriteLine(service.FindBookByTag((x) => x.Author == "John Skit") + "-> find");
+
+            Console.WriteLine(service.ToString());
             Console.WriteLine("___________");
             service.Load();
-            service.Print();
+            Console.WriteLine(service.ToString());
 
             Console.ReadKey();
         }
@@ -48,14 +52,6 @@ namespace ConsoleUI
         public IStorage Create()
         {
             return new BinaryStorage("library.bin");
-        }
-    }
-    
-    class AuthorComparer : IComparer<Book>
-    {
-        public int Compare(Book lhs, Book rhs)
-        {
-            return String.Compare(lhs.Author, rhs.Author, StringComparison.Ordinal);
         }
     }
 }

@@ -1,20 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using BookLogic;
 using BookListStorageLogic;
 
 namespace BookListServiceLogic
 {
-    /// <summary>
-    /// Tags for finding the element
-    /// </summary>
-    public enum SearchTag
-    {
-        ByAuthor,
-        ByName,
-        ByGenre
-    }
-
     /// <summary>
     /// Class provides us with method for work with collection of books
     /// </summary>
@@ -28,19 +19,18 @@ namespace BookListServiceLogic
         /// <summary>
         /// Method allows to create the instance of storage when it's need
         /// </summary>
-        private readonly IStorageFactory storageFactory;
+        private readonly IStorageFactory _storageFactory;
 
-        public BookListService(IStorageFactory storageFactory)
-        {
-            this.storageFactory = storageFactory;
-        }
+        public BookListService(IStorageFactory storageFactory = null) => _storageFactory = storageFactory;
 
         /// <summary>
         /// Method allows to load collection from storage
         /// </summary>
         public void Load()
         {
-            var storage = storageFactory.Create();
+            if(ReferenceEquals(_storageFactory, null))
+                throw new StorageCreateException();
+            var storage = _storageFactory.Create();
             storage.LoadBooks(books);
         }
 
@@ -49,7 +39,9 @@ namespace BookListServiceLogic
         /// </summary>
         public void Save()
         {
-            var storage = storageFactory.Create();
+            if(ReferenceEquals(_storageFactory, null))
+                throw new StorageCreateException();
+            var storage = _storageFactory.Create();
             storage.SaveBooks(books);
         }
 
@@ -62,8 +54,8 @@ namespace BookListServiceLogic
             if(ReferenceEquals(book, null))
                 throw new ArgumentNullException();
 
-            if(FindBookById(book.Id) != null) 
-                throw new ArgumentException();//TODO: need to throw custom exception
+            if(books.Contains(book)) 
+                throw new ArgumentException();
 
             books.Add(book);
         }
@@ -74,53 +66,18 @@ namespace BookListServiceLogic
         /// <param name="book"></param>
         public void RemoveBook(Book book)
         {
-            if(FindBookById(book.Id) == null)
-                throw new ArgumentException();//TODO: need to throw custom exception
+            if(!books.Contains(book))
+                throw new ArgumentException();
 
             books.Remove(book);
         }
 
         /// <summary>
-        /// Method allows to find the book by id
-        /// </summary>
-        /// <param name="id">Expected id</param>
-        /// <returns>Book if exists, null otherwise</returns>
-        public Book FindBookById(int id)
-        {
-            foreach (var book in books)
-                if (book.Id == id) return book;
-            return null;
-        }
-
-        /// <summary>
         /// Method allows to find the book by tag
         /// </summary>
-        /// <param name="criterion">Criterion string(author, name or genre)</param>
-        /// <param name="tag">Tag for finding</param>
+        /// <param name="predicate">Criterion to finding</param>
         /// <returns>Book if exists, null otherwise</returns>
-        //TODO: add possibility to use interface or something other
-        public Book FindBookByTag(string criterion, SearchTag tag)//maybe return set of books?
-        {
-            foreach (var book in books)
-            {
-                switch (tag)
-                {
-                    case SearchTag.ByAuthor:
-                        if (book.Author == criterion)
-                            return book;
-                        continue;
-                    case SearchTag.ByName:
-                        if (book.Author == criterion)
-                            return book;
-                        continue;
-                    case SearchTag.ByGenre:
-                        if (book.Genre == criterion)
-                            return book;
-                        continue;
-                }
-            }
-            return null;
-        }
+        public Book FindBookByTag(Predicate<Book> predicate) => books.Find(predicate);
 
         /// <summary>
         /// Method allows to sort collection by criterion
@@ -135,13 +92,14 @@ namespace BookListServiceLogic
         }
 
         /// <summary>
-        /// Print collection on the console
+        /// Show elements of the collection of books
         /// </summary>
-        public void Print()
+        public override string ToString()
         {
+            var result = new StringBuilder(String.Empty);
             foreach (var book in books)
-                Console.WriteLine(book);
+                result.Append(book + "\n");
+            return result.ToString();
         }
-
     }
 }

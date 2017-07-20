@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comparer\AuthorComparer.cs" />
+    <Compile Include="Comparer\GenreComparer.cs" />
+    <Compile Include="Comparer\NameComparer.cs" />
+    <Compile Include="Comparer\PagesComparer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

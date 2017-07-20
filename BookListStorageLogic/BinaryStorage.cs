@@ -39,7 +39,7 @@ namespace BookListStorageLogic
                     binWriter.Write(book.Author);
                     binWriter.Write(book.Name);
                     binWriter.Write(book.Genre);
-                    binWriter.Write(book.Id);
+                    binWriter.Write(book.Pages);
                 }
             }
             
@@ -65,12 +65,13 @@ namespace BookListStorageLogic
                 Console.WriteLine("Load start!");
                 while (binReader.BaseStream.Position < binReader.BaseStream.Length)
                 {
-                    var book = new Book();
-                    book.Author = binReader.ReadString();
-                    book.Name = binReader.ReadString();
-                    book.Genre = binReader.ReadString();
-                    book.Id = binReader.ReadInt32();
-
+                    var book = new Book()
+                    {
+                        Author = binReader.ReadString(),
+                        Name = binReader.ReadString(),
+                        Genre = binReader.ReadString(),
+                        Pages = binReader.ReadInt32()
+                    };
                     books.Add(book);
                 }
             }
