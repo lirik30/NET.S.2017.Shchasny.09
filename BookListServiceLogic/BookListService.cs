@@ -22,18 +22,17 @@ namespace BookListServiceLogic
         /// <summary>
         /// Method allows to create the instance of storage when it's need
         /// </summary>
-        private readonly IStorageFactory _storageFactory;
+        //private readonly IStorageFactory _storageFactory;
 
-        public BookListService(IStorageFactory storageFactory = null) => _storageFactory = storageFactory;
+        public BookListService(){}// => _storageFactory = storageFactory;
 
         /// <summary>
         /// Method allows to load collection from storage
         /// </summary>
-        public void Load()
+        public void Load(IStorage storage)
         {
-            if(ReferenceEquals(_storageFactory, null))
-                throw new StorageCreateException("If you want to save or load collection of books, you must to set storage creator");
-            var storage = _storageFactory.Create();
+            if(ReferenceEquals(storage, null))
+                throw new StorageException("If you want to save or load collection of books, you must to set storage creator");
             storage.LoadBooks(books);
             logger.Info("Collection of books was loaded");
         }
@@ -41,11 +40,10 @@ namespace BookListServiceLogic
         /// <summary>
         /// Method allows to save collection into the storage
         /// </summary>
-        public void Save()
+        public void Save(IStorage storage)//TODO: Remove Factory and take storage by argument in Save/Load method
         {
-            if(ReferenceEquals(_storageFactory, null))
-                throw new StorageCreateException("You cannot load or save collection without storage. Please, set storage creator");
-            var storage = _storageFactory.Create();
+            if(ReferenceEquals(storage, null))
+                throw new StorageException("You cannot load or save collection without storage. Please, set storage creator");
             storage.SaveBooks(books);
             logger.Info("Collection of books was saved");
         }

@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="BinaryStorage.cs" />
     <Compile Include="IStorage.cs" />
-    <Compile Include="IStorageFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

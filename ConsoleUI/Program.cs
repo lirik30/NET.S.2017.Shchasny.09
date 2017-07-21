@@ -12,7 +12,6 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //TODO: storageFactory class?
             ILog logger = new NLogAdapter();
             try
             {
@@ -27,16 +26,16 @@ namespace ConsoleUI
 
 
 
-                var service = new BookListService(new storageFactory());
+                var service = new BookListService();
                 var service2 = new BookListService();
-                service2.Load();
+                service2.Load(new BinaryStorage("library.bin"));
                 service.AddBook(csharp);
                 service.AddBook(dotnet);
                 service.AddBook(csharp2);
                 Console.WriteLine("___________");
                 Console.WriteLine();
 
-                service.Save();
+                service.Save(new BinaryStorage("library.bin"));
                 var hahaika = new Book {Author = "petrosyan", Name = "shytki", Genre = "smeh", Pages = 10};
                 service.AddBook(hahaika);
 
@@ -44,7 +43,7 @@ namespace ConsoleUI
 
                 Console.WriteLine(service.ToString());
                 Console.WriteLine("___________");
-                service.Load();
+                service.Load(new BinaryStorage("library.bin"));
                 Console.WriteLine(service.ToString());
 
                 Console.ReadKey();
@@ -79,21 +78,13 @@ namespace ConsoleUI
                 logger.Error(ex.StackTrace);
                 Console.ReadKey();
             }
-            catch (StorageCreateException ex)
+            catch (StorageException ex)
             {
                 logger.Info("Unhandled exception");
                 logger.Error(ex.Message);
                 logger.Error(ex.StackTrace);
                 Console.ReadKey();
             }
-        }
-    }
-
-    class storageFactory : IStorageFactory
-    {
-        public IStorage Create()
-        {
-            return new BinaryStorage("library.bin");
         }
     }
 }
