@@ -34,7 +34,7 @@ namespace ConsoleUI
                 Console.WriteLine("___________");
                 Console.WriteLine();
 
-                service.Save(new BinaryFormatterStorage("library.bin"));
+                service.Save(new XMLStorage("library.xml"));
                 var hahaika = new Book {Author = "petrosyan", Name = "shytki", Genre = "smeh", Pages = 10};
                 service.AddBook(hahaika);
 
@@ -42,7 +42,7 @@ namespace ConsoleUI
 
                 Console.WriteLine(service.ToString());
                 Console.WriteLine("___________");
-                service.Load(new BinaryFormatterStorage("library.bin"));
+                service.Load(new XMLStorage("library.xml"));
                 Console.WriteLine(service.ToString());
                 Console.WriteLine(service.Count);
                 Console.ReadKey();

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ArrayOfBook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Book>
+    <Author>Andrew Troelsen</Author>
+    <Name>C#...</Name>
+    <Genre>IT</Genre>
+    <Pages>1312</Pages>
+  </Book>
+  <Book>
+    <Author>John Skit</Author>
+    <Name>C#...</Name>
+    <Genre>IT</Genre>
+    <Pages>608</Pages>
+  </Book>
+  <Book>
+    <Author>Andrew Troelsen</Author>
+    <Name>C#...</Name>
+    <Genre>IT</Genre>
+    <Pages>2012</Pages>
+  </Book>
+</ArrayOfBook>

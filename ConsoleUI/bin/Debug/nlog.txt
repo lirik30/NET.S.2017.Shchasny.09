@@ -89,3 +89,71 @@ Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petr
 BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter started
 BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter finished
 Program.Main => BookListService.Load => NLogAdapter.Info Collection of books was loaded
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+BookListService.Save => XMLStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter started
+BookListService.Save => XMLStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter finished
+Program.Main => BookListService.Save => NLogAdapter.Info Collection of books was successfully saved
+Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petrosyan. Genre: smeh. Number of pages: 10 was successfully added in the collection
+BookListService.Load => XMLStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter started
+BookListService.Load => XMLStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter finished
+Program.Main => BookListService.Load => NLogAdapter.Info Collection of books was successfully loaded
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+BookListService.Save => XMLStorage.SaveBooks => NLogAdapter.Debug Save in XML file started
+BookListService.Save => XMLStorage.SaveBooks => NLogAdapter.Debug Save in XML file finished
+Program.Main => BookListService.Save => NLogAdapter.Info Collection of books was successfully saved
+Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petrosyan. Genre: smeh. Number of pages: 10 was successfully added in the collection
+BookListService.Load => XMLStorage.LoadBooks => NLogAdapter.Debug Load from XML file started
+BookListService.Load => XMLStorage.LoadBooks => NLogAdapter.Debug Load from XML file finished
+Program.Main => BookListService.Load => NLogAdapter.Info Collection of books was successfully loaded
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+BookListService.Save => XMLStorage.SaveBooks => NLogAdapter.Debug Save in XML file started
+BookListService.Save => XMLStorage.SaveBooks => NLogAdapter.Debug Save in XML file finished
+Program.Main => BookListService.Save => NLogAdapter.Info Collection of books was successfully saved
+Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petrosyan. Genre: smeh. Number of pages: 10 was successfully added in the collection
+Program.Main => NLogAdapter.Info Unhandled exception
+Program.Main => NLogAdapter.Error File by path library.xmld not found
+Program.Main => NLogAdapter.Error    в BookListServiceLogic.XMLStorage.LoadBooks(List`1 books) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\XMLStorage.cs:строка 64
+   в BookListServiceLogic.BookListService.Load(IStorage storage) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\BookListService.cs:строка 50
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+BookListService.Save => XMLStorage.SaveBooks => NLogAdapter.Debug Save in XML file started
+BookListService.Save => XMLStorage.SaveBooks => NLogAdapter.Debug Save in XML file finished
+Program.Main => BookListService.Save => NLogAdapter.Info Collection of books was successfully saved
+Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petrosyan. Genre: smeh. Number of pages: 10 was successfully added in the collection
+Program.Main => NLogAdapter.Info Unhandled exception
+Program.Main => NLogAdapter.Error File by path library.xmld not found
+Program.Main => NLogAdapter.Error    в BookListServiceLogic.XMLStorage.LoadBooks(List`1 books) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\XMLStorage.cs:строка 64
+   в BookListServiceLogic.BookListService.Load(IStorage storage) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\BookListService.cs:строка 50
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+Program.Main => NLogAdapter.Info Unhandled exception
+Program.Main => NLogAdapter.Error File must be xml compatible
+Program.Main => NLogAdapter.Error    в BookListServiceLogic.XMLStorage..ctor(String path, ILog logger) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\XMLStorage.cs:строка 39
+   в BookListServiceLogic.XMLStorage..ctor(String path) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\XMLStorage.cs:строка 25
+   в ConsoleUI.Program.Main(String[] args) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\ConsoleUI\Program.cs:строка 37
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+Program.Main => NLogAdapter.Info Unhandled exception
+Program.Main => NLogAdapter.Error File must be xml compatible
+Program.Main => NLogAdapter.Error    в BookListServiceLogic.XMLStorage..ctor(String path, ILog logger) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\XMLStorage.cs:строка 39
+   в BookListServiceLogic.XMLStorage..ctor(String path) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\XMLStorage.cs:строка 25
+   в ConsoleUI.Program.Main(String[] args) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\ConsoleUI\Program.cs:строка 37
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+BookListService.Save => XMLStorage.SaveBooks => NLogAdapter.Debug Save in XML file started
+BookListService.Save => XMLStorage.SaveBooks => NLogAdapter.Debug Save in XML file finished
+Program.Main => BookListService.Save => NLogAdapter.Info Collection of books was successfully saved
+Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petrosyan. Genre: smeh. Number of pages: 10 was successfully added in the collection
+BookListService.Load => XMLStorage.LoadBooks => NLogAdapter.Debug Load from XML file started
+BookListService.Load => XMLStorage.LoadBooks => NLogAdapter.Debug Load from XML file finished
+Program.Main => BookListService.Load => NLogAdapter.Info Collection of books was successfully loaded

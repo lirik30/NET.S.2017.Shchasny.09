@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using BookLogic;
 using Logging;
 
@@ -33,7 +34,13 @@ namespace BookListStorageLogic
         /// <param name="logger">Used logger. NLog logger is default</param>
         public BinaryStorage(string path, ILog logger)
         {
-            _path = path ?? "library.bin";
+            if (ReferenceEquals(path, null))
+                throw new ArgumentNullException(nameof(path), "File path must be not null");
+            var correctName = new Regex(@"\w+\.(?:bin|dat)$");
+            if (!correctName.IsMatch(path))
+                throw new ArgumentException("File must be binary file");
+
+            _path = path;
             _logger = logger ?? new NLogAdapter();
         }
 
