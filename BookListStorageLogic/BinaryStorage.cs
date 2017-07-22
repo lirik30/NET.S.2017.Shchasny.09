@@ -11,17 +11,30 @@ namespace BookListStorageLogic
     /// </summary>
     public class BinaryStorage : IStorage
     {
-
-        ILog logger = new NLogAdapter();
+        private readonly ILog _logger;
 
         /// <summary>
         /// File path
         /// </summary>
-        private string _path = "library.bin";
+        private readonly string _path;
 
-        public BinaryStorage(string path)
+
+        /// <summary>
+        /// Create new storage with using binary file
+        /// </summary>
+        /// <param name="path">Binary file path</param>
+        public BinaryStorage(string path) : this(path, new NLogAdapter()) { }
+
+
+        /// <summary>
+        /// Create new storage with using binary file
+        /// </summary>
+        /// <param name="path">Binary file path</param>
+        /// <param name="logger">Used logger. NLog logger is default</param>
+        public BinaryStorage(string path, ILog logger)
         {
-            _path = path;
+            _path = path ?? "library.bin";
+            _logger = logger ?? new NLogAdapter();
         }
 
         /// <summary>
@@ -37,7 +50,7 @@ namespace BookListStorageLogic
 
             using (var binWriter = new BinaryWriter(stream))
             {
-                logger.Debug("Save started");
+                _logger.Debug("Save in binary file started");
                 foreach (var book in books)
                 {
                     binWriter.Write(book.Author);
@@ -45,7 +58,7 @@ namespace BookListStorageLogic
                     binWriter.Write(book.Genre);
                     binWriter.Write(book.Pages);
                 }
-                logger.Debug("Save finished");
+                _logger.Debug("Save in binaru file finished");
             }
             
             
@@ -67,7 +80,7 @@ namespace BookListStorageLogic
 
             using (var binReader = new BinaryReader(stream))
             {
-                logger.Debug("Load started");
+                _logger.Debug("Load started");
                 while (binReader.BaseStream.Position < binReader.BaseStream.Length)
                 {
                     var book = new Book()
@@ -79,7 +92,7 @@ namespace BookListStorageLogic
                     };
                     books.Add(book);
                 }
-                logger.Debug("Load finished");
+                _logger.Debug("Load finished");
             }
         }
     }

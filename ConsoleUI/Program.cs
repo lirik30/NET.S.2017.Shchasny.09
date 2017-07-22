@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using BookLogic;
 using BookListServiceLogic;
 using BookListStorageLogic;
@@ -27,25 +26,25 @@ namespace ConsoleUI
 
 
                 var service = new BookListService();
-                var service2 = new BookListService();
-                service2.Load(new BinaryStorage("library.bin"));
+                //var service2 = new BookListService();
+                //service2.Load(new BinaryFormatterStorage("library.bin"));
                 service.AddBook(csharp);
                 service.AddBook(dotnet);
                 service.AddBook(csharp2);
                 Console.WriteLine("___________");
                 Console.WriteLine();
 
-                service.Save(new BinaryStorage("library.bin"));
+                service.Save(new BinaryFormatterStorage("library.bin"));
                 var hahaika = new Book {Author = "petrosyan", Name = "shytki", Genre = "smeh", Pages = 10};
                 service.AddBook(hahaika);
 
-                Console.WriteLine(service.FindBookByTag((x) => x.Author == "John Skit") + "-> find");
+                //Console.WriteLine(service.FindBookByTag((x) => x.Author == "John Skit") + "-> find");
 
                 Console.WriteLine(service.ToString());
                 Console.WriteLine("___________");
-                service.Load(new BinaryStorage("library.bin"));
+                service.Load(new BinaryFormatterStorage("library.bin"));
                 Console.WriteLine(service.ToString());
-
+                Console.WriteLine(service.Count);
                 Console.ReadKey();
             }
             catch (ArgumentOutOfRangeException ex)
@@ -71,18 +70,11 @@ namespace ConsoleUI
                 logger.Error(ex.StackTrace);
                 Console.ReadKey();
             }
-            catch (FileNotFoundException ex)
-            {
-                logger.Info("Unhandled exception");
-                logger.Error(ex.Message);
-                logger.Error(ex.StackTrace);
-                Console.ReadKey();
-            }
             catch (StorageException ex)
             {
                 logger.Info("Unhandled exception");
                 logger.Error(ex.Message);
-                logger.Error(ex.StackTrace);
+                logger.Error(ex.InnerException?.StackTrace??ex.StackTrace);
                 Console.ReadKey();
             }
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using Logging;
 using System.Text;
 using BookLogic;
@@ -12,19 +13,29 @@ namespace BookListServiceLogic
     /// </summary>
     public class BookListService
     {
-        ILog logger = new NLogAdapter();
+        /// <summary>
+        /// Number of books in the collection
+        /// </summary>
+        public int Count => books.Count;
+
+        #region private fields
+        private readonly ILog _logger;
 
         /// <summary>
         /// Collection of books
         /// </summary>
         private List<Book> books = new List<Book>();
+        
+        #endregion
 
-        /// <summary>
-        /// Method allows to create the instance of storage when it's need
-        /// </summary>
-        //private readonly IStorageFactory _storageFactory;
+        #region ctors
 
-        public BookListService(){}// => _storageFactory = storageFactory;
+        public BookListService() : this(new NLogAdapter()) { }
+        public BookListService(ILog logger) => _logger = logger ?? new NLogAdapter();
+
+        #endregion
+
+
 
         /// <summary>
         /// Method allows to load collection from storage
@@ -32,21 +43,39 @@ namespace BookListServiceLogic
         public void Load(IStorage storage)
         {
             if(ReferenceEquals(storage, null))
-                throw new StorageException("If you want to save or load collection of books, you must to set storage creator");
-            storage.LoadBooks(books);
-            logger.Info("Collection of books was loaded");
+                throw new StorageException("If you want to save or load collection of books, you must to set storage");
+
+            try
+            {
+                storage.LoadBooks(books);
+            }
+            catch (IOException ex)
+            {
+                throw new StorageException(ex.Message, ex);
+            }
+            _logger.Info("Collection of books was successfully loaded");
         }
+
 
         /// <summary>
         /// Method allows to save collection into the storage
         /// </summary>
-        public void Save(IStorage storage)//TODO: Remove Factory and take storage by argument in Save/Load method
+        public void Save(IStorage storage)
         {
             if(ReferenceEquals(storage, null))
-                throw new StorageException("You cannot load or save collection without storage. Please, set storage creator");
-            storage.SaveBooks(books);
-            logger.Info("Collection of books was saved");
+                throw new StorageException("You cannot load or save collection without storage. Please, set storage");
+
+            try
+            {
+                storage.SaveBooks(books);
+            }
+            catch (IOException ex)
+            {
+                throw new StorageException(ex.Message, ex);
+            }
+            _logger.Info("Collection of books was successfully saved");
         }
+
 
         /// <summary>
         /// Method allows to add book into the collection
@@ -61,8 +90,9 @@ namespace BookListServiceLogic
                 throw new ArgumentException("This book already exists in the collection", nameof(book));
 
             books.Add(book);
-            logger.Info($"{book} was successfully added in the collection");
+            _logger.Info($"{book} was successfully added in the collection");
         }
+
 
         /// <summary>
         /// Method allows to remove the book from the collection
@@ -74,8 +104,9 @@ namespace BookListServiceLogic
                 throw new ArgumentException("Book not found", nameof(book));
 
             books.Remove(book);
-            logger.Info($"{book} was successfully removed from the collection");
+            _logger.Info($"{book} was successfully removed from the collection");
         }
+
 
         /// <summary>
         /// Method allows to find the book by tag
@@ -83,6 +114,7 @@ namespace BookListServiceLogic
         /// <param name="predicate">Criterion to finding</param>
         /// <returns>Book if exists, null otherwise</returns>
         public Book FindBookByTag(Predicate<Book> predicate) => books.Find(predicate);
+
 
         /// <summary>
         /// Method allows to sort collection by criterion
@@ -94,8 +126,9 @@ namespace BookListServiceLogic
                 throw new ArgumentNullException(nameof(comparer), "Comparer cannot be null");
 
             books.Sort(comparer);
-            logger.Info("Collection of the books was sorted");
+            _logger.Info("Collection of the books was sorted");
         }
+
 
         /// <summary>
         /// Show elements of the collection of books

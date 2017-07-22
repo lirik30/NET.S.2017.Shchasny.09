@@ -11,3 +11,81 @@ Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petr
 BookListService.Load => BinaryStorage.LoadBooks => NLogAdapter.Debug Load started
 BookListService.Load => BinaryStorage.LoadBooks => NLogAdapter.Debug Load finished
 Program.Main => BookListService.Load => NLogAdapter.Info Collection of books was loaded
+Program.Main => NLogAdapter.Info Unhandled exception
+Program.Main => NLogAdapter.Error File by path library.bin not found
+Program.Main => NLogAdapter.Error    в BookListStorageLogic.BinaryStorage.LoadBooks(List`1 books) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListStorageLogic\BinaryStorage.cs:строка 64
+   в BookListServiceLogic.BookListService.Load(IStorage storage) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\BookListService.cs:строка 39
+Program.Main => NLogAdapter.Info Unhandled exception
+Program.Main => NLogAdapter.Error File by path library.bin not found
+Program.Main => NLogAdapter.Error    в BookListServiceLogic.BinaryFormatterStorage.LoadBooks(List`1 books) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\BinaryFormatterStorage.cs:строка 48
+   в BookListServiceLogic.BookListService.Load(IStorage storage) в C:\Users\Kiril\documents\visual studio 2017\Projects\NET.S.2017.Shchasny.09\BookListServiceLogic\BookListService.cs:строка 39
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter started
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter finished
+Program.Main => BookListService.Save => NLogAdapter.Info Collection of books was saved
+Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petrosyan. Genre: smeh. Number of pages: 10 was successfully added in the collection
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter started
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter finished
+Program.Main => BookListService.Load => NLogAdapter.Info Collection of books was loaded
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter started
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter finished
+Program.Main => BookListService.Save => NLogAdapter.Info Collection of books was saved
+Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petrosyan. Genre: smeh. Number of pages: 10 was successfully added in the collection
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter started
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter finished
+Program.Main => BookListService.Load => NLogAdapter.Info Collection of books was loaded
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter started
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter finished
+Program.Main => BookListService.Save => NLogAdapter.Info Collection of books was saved
+Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petrosyan. Genre: smeh. Number of pages: 10 was successfully added in the collection
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter started
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter finished
+Program.Main => BookListService.Load => NLogAdapter.Info Collection of books was loaded
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter started
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter finished
+Program.Main => BookListService.Save => NLogAdapter.Info Collection of books was saved
+Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petrosyan. Genre: smeh. Number of pages: 10 was successfully added in the collection
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter started
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter finished
+Program.Main => BookListService.Load => NLogAdapter.Info Collection of books was loaded
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter started
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter finished
+Program.Main => BookListService.Save => NLogAdapter.Info Collection of books was saved
+Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petrosyan. Genre: smeh. Number of pages: 10 was successfully added in the collection
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter started
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter finished
+Program.Main => BookListService.Load => NLogAdapter.Info Collection of books was loaded
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter started
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter finished
+Program.Main => BookListService.Save => NLogAdapter.Info Collection of books was saved
+Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petrosyan. Genre: smeh. Number of pages: 10 was successfully added in the collection
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter started
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter finished
+Program.Main => BookListService.Load => NLogAdapter.Info Collection of books was loaded
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 1312 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: John Skit. Genre: IT. Number of pages: 608 was successfully added in the collection
+Program.Main => BookListService.AddBook => NLogAdapter.Info C#.... Author: Andrew Troelsen. Genre: IT. Number of pages: 2012 was successfully added in the collection
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter started
+BookListService.Save => BinaryFormatterStorage.SaveBooks => NLogAdapter.Debug Save with binary formatter finished
+Program.Main => BookListService.Save => NLogAdapter.Info Collection of books was saved
+Program.Main => BookListService.AddBook => NLogAdapter.Info shytki. Author: petrosyan. Genre: smeh. Number of pages: 10 was successfully added in the collection
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter started
+BookListService.Load => BinaryFormatterStorage.LoadBooks => NLogAdapter.Debug Load with binary formatter finished
+Program.Main => BookListService.Load => NLogAdapter.Info Collection of books was loaded
